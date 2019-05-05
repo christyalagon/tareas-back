@@ -15,4 +15,10 @@ public class UsuarioServiceImp implements UsuarioService {
     public Usuario findById(Long id) {
         return usuarioRepository.findById(id);
     }
+
+    @Override
+    public Usuario login(String nombre) {
+        Usuario usuarioLogueado = usuarioRepository.findByNombre(nombre);
+        return usuarioLogueado;
+    }
 }
