@@ -15,4 +15,9 @@ public class TareasServiceImp implements TareasService {
     public Tareas findById(Long id) {
         return tareasRepository.findById(id);
     }
+
+    @Override
+    public Tareas save(Tareas tarea) {
+        return tareasRepository.save(tarea);
+    }
 }

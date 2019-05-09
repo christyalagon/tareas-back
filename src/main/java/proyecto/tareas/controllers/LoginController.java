@@ -13,13 +13,15 @@ public class LoginController {
     @Autowired
     private UsuarioService usuarioService;
 
-    @RequestMapping("/login")
-    public Usuario login(@RequestBody String nombre) {
+    @RequestMapping("/login/{nombre}")
+    public Usuario login(@PathVariable String nombre) {
+        System.out.println("nombre");
+        System.out.println(nombre);
         return usuarioService.login(nombre);
     }
 
     @RequestMapping("/1")
-    public String login2(@RequestBody String nombre) {
+    public String login2( String nombre) {
         System.out.println("nombre -- " + nombre);
         return "HOLA";
     }

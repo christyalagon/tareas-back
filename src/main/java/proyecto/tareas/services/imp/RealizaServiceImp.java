@@ -15,4 +15,9 @@ public class RealizaServiceImp implements RealizaService {
     public Realiza findById(Long id) {
         return realizaRepository.findById(id);
     }
+
+    @Override
+    public Realiza guardarSinNota(Realiza realiza) {
+        return realizaRepository.save(realiza);
+    }
 }

@@ -21,7 +21,7 @@ public class Alumno implements Serializable {
     @Column(name = "segundo_apellido")
     private String segundoApellido;
     @Column(name = "tutor_id")
-    private String tutorId;
+    private Long tutorId;
     @Column(name = "Dep_id")
     private String depId;
 
@@ -65,11 +65,11 @@ public class Alumno implements Serializable {
         this.segundoApellido = segundoApellido;
     }
 
-    public String getTutorId() {
+    public Long getTutorId() {
         return tutorId;
     }
 
-    public void setTutorId(String tutorId) {
+    public void setTutorId(Long tutorId) {
         this.tutorId = tutorId;
     }
 
