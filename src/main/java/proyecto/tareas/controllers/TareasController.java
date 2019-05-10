@@ -20,10 +20,12 @@ public class TareasController {
     private TareasService tareasService;
     @Autowired
     private RealizaService realizaService;
+
     @PostMapping("/nueva")
     public Tareas tareaSinAlumno(@RequestBody Tareas tarea) {
         return tareasService.save(tarea);
     }
+
     @PostMapping("/nueva/alumno")
     public Tareas tareaConAlumno(@RequestBody TareaYAlumno tareaAlumno) {
         Tareas nuevaTarea = new Tareas();
@@ -34,9 +36,13 @@ public class TareasController {
         realiza.setCodigoAlumno(tareaAlumno.getCodigoAlumno());
         realiza.setCodigoTarea(tareaAlumno.getCodigoTarea());
         realiza.setCodigoTarea(tareaAlumno.getCodigoTarea());
-        System.out.println(realizaService.guardarSinNota(realiza));
         realizaService.guardarSinNota(realiza);
         return nuevaTarea;
+    }
+
+    @GetMapping("/listado/asignacion")
+    public List<Tareas> tareasSinAsginar() {
+        return tareasService.tareasSinAsignar();
     }
 
 }
