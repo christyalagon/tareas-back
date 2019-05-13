@@ -30,4 +30,9 @@ public class TareasServiceImp implements TareasService {
         tareas = tareasRepository.tareasSinAsignar();
         return tareas;
     }
+
+    @Override
+    public List<Object> tareasSinNota() {
+        return tareasRepository.tareasSinNota();
+    }
 }

@@ -40,9 +40,25 @@ public class TareasController {
         return nuevaTarea;
     }
 
+    @PostMapping("/nueva/alumno/lista")
+    public void tareaConAlumnoLista(@RequestBody List<TareaYAlumno> tareasAlumno) {
+        for (TareaYAlumno tareaAlumno : tareasAlumno) {
+            Realiza realiza = new Realiza();
+            realiza.setCodigoAlumno(tareaAlumno.getCodigoAlumno());
+            realiza.setCodigoTarea(tareaAlumno.getCodigoTarea());
+            realiza.setCodigoTarea(tareaAlumno.getCodigoTarea());
+            realizaService.guardarSinNota(realiza);
+        }
+    }
+
     @GetMapping("/listado/asignacion")
     public List<Tareas> tareasSinAsginar() {
         return tareasService.tareasSinAsignar();
+    }
+
+    @GetMapping("/listado22")
+    public List<Object> tareasSinNota() {
+        return tareasService.tareasSinNota();
     }
 
 }

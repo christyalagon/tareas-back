@@ -6,6 +6,13 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @SuppressWarnings("serial")
+//@NamedQuery(
+  //      name = "User.findByGroupId",
+    //    query =
+      //          "SELECT r.codigoAlumno, t.codigoTarea, t.descripcion, r.nota\\n\" +\n" +
+        //                "            \"FROM Realiza r inner join Tareas t on r.codigoTarea= t.codigoTarea\\n\" +\n" +
+          //              "            \"where r.nota is null"
+//)
 @Entity
 public class Tareas implements Serializable {
     @Id
