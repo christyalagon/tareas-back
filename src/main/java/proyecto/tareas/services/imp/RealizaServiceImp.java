@@ -19,5 +19,8 @@ public class RealizaServiceImp implements RealizaService {
     @Override
     public Realiza guardarSinNota(Realiza realiza) {
         return realizaRepository.save(realiza);
+    }@Override
+    public Realiza guardarConNota(Realiza realiza) {
+        return realizaRepository.save(realiza);
     }
 }

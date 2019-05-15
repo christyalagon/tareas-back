@@ -2,9 +2,14 @@ package proyecto.tareas.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
 import proyecto.tareas.domain.Realiza;
 
-public interface RealizaRepository extends JpaRepository<Realiza, Long> {
+import java.util.List;
+
+public interface RealizaRepository extends CrudRepository<Realiza, Long> {
     Realiza findById(Long id);
     Realiza save(Realiza realiza);
+    List<Realiza> findByNota(Long nota);
 }

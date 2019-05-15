@@ -6,10 +6,12 @@ import proyecto.tareas.domain.Alumno;
 import proyecto.tareas.domain.Realiza;
 import proyecto.tareas.domain.Tareas;
 import proyecto.tareas.models.TareaYAlumno;
+import proyecto.tareas.models.TareaYAlumnoNombre;
 import proyecto.tareas.services.AlumnoService;
 import proyecto.tareas.services.RealizaService;
 import proyecto.tareas.services.TareasService;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -56,9 +58,22 @@ public class TareasController {
         return tareasService.tareasSinAsignar();
     }
 
-    @GetMapping("/listado22")
-    public List<Object> tareasSinNota() {
-        return tareasService.tareasSinNota();
+    @GetMapping("/puntuar/{tutorId}")
+    public List<TareaYAlumnoNombre> tareasSinNota(@PathVariable Long tutorId) {
+        return tareasService.tareasSinNota(tutorId);
     }
-
+    @PostMapping("/puntuar")
+    public void tareasPuntuadas(@RequestBody List<TareaYAlumnoNombre> tareasAlumno) {
+        for (TareaYAlumnoNombre tareaAlumno : tareasAlumno) {
+            Realiza realiza = new Realiza();
+            System.out.println(tareaAlumno.toString());
+            realiza.setId(tareaAlumno.getIdRealiza());
+            realiza.setCodigoAlumno(tareaAlumno.getCodigoAlumno());
+            realiza.setCodigoTarea(tareaAlumno.getCodigoTarea());
+            realiza.setNota(tareaAlumno.getNota());
+            realiza.setFecha(new Date());
+            System.out.println(realiza.toString());
+            realizaService.guardarConNota(realiza);
+        }
+    }
 }
