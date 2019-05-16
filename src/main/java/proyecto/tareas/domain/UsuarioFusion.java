@@ -1,13 +1,12 @@
 package proyecto.tareas.domain;
 
-import java.io.Serializable;
-
 import javax.persistence.*;
+import java.io.Serializable;
 
 @SuppressWarnings("serial")
 @Entity
-@NamedStoredProcedureQuery(name = "Usuario.listarUsuariosCompleto", procedureName = "listarUsuariosCompleto")
-public class Usuario implements Serializable {
+@Table(name = "Usuario_fusion")
+public class UsuarioFusion implements Serializable {
     @Id
     @Column(name = "id")
     @GeneratedValue
@@ -20,6 +19,8 @@ public class Usuario implements Serializable {
     private String segundoApellido;
     @Column(name = "perfil")
     private char perfil;
+    @Column(name = "centro_empresa")
+    private String centroEmpresa;
 
     public Long getId() {
         return id;
@@ -61,4 +62,11 @@ public class Usuario implements Serializable {
         this.perfil = perfil;
     }
 
+    public String getCentroEmpresa() {
+        return centroEmpresa;
+    }
+
+    public void setCentroEmpresa(String centroEmpresa) {
+        this.centroEmpresa = centroEmpresa;
+    }
 }
