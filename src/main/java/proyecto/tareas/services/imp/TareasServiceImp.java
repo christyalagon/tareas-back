@@ -5,11 +5,14 @@ import org.springframework.stereotype.Service;
 import proyecto.tareas.domain.Alumno;
 import proyecto.tareas.domain.Realiza;
 import proyecto.tareas.domain.Tareas;
+import proyecto.tareas.models.ListadoNotas;
 import proyecto.tareas.models.TareaYAlumnoNombre;
 import proyecto.tareas.repositories.AlumnoRepository;
 import proyecto.tareas.repositories.RealizaRepository;
 import proyecto.tareas.repositories.TareasRepository;
+import proyecto.tareas.repositories.UsuarioRepository;
 import proyecto.tareas.services.TareasService;
+import proyecto.tareas.services.UsuarioService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,5 +63,26 @@ public class TareasServiceImp implements TareasService {
         }
 
         return tareaYAlumnos;
+    }
+
+    @Override
+    public List<ListadoNotas> listadoNotasPorTutorId(Long tutorId) {
+        List<Realiza> realizas = realizaRepository.findByNotaNotNullOrderByCodigoAlumnoAscCodigoTarea();
+        List<ListadoNotas> listadoNotas = new ArrayList<>();
+        System.out.println(tutorId);
+        for (Realiza realiza : realizas) {
+            Alumno alumno = new Alumno();
+            alumno = alumnoRepository.findByCodigoAlumno(realiza.getCodigoAlumno());
+            System.out.println(alumno.getTutorId());
+            if (alumno.getTutorId() == tutorId){
+            System.out.println("GUALES");
+                Tareas tarea = tareasRepository.findByCodigoTarea(realiza.getCodigoTarea());
+                ListadoNotas nuevaTarea = new ListadoNotas(alumno.getNombre(), alumno.getPrimerApellido(), alumno.getSegundoApellido(),
+                        tarea.getDescripcion(), realiza.getNota());
+                listadoNotas.add(nuevaTarea);
+            }
+        }
+
+        return listadoNotas;
     }
 }

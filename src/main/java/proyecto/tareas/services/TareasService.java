@@ -3,6 +3,7 @@ package proyecto.tareas.services;
 import org.springframework.data.jpa.repository.Query;
 import proyecto.tareas.domain.Realiza;
 import proyecto.tareas.domain.Tareas;
+import proyecto.tareas.models.ListadoNotas;
 import proyecto.tareas.models.TareaYAlumno;
 import proyecto.tareas.models.TareaYAlumnoNombre;
 
@@ -19,5 +20,8 @@ public interface TareasService {
     public List<Tareas> tareasSinAsignar();
 
     public List<TareaYAlumnoNombre> tareasSinNota(Long tutorId);
+
+    public List<ListadoNotas> listadoNotasPorTutorId(Long tutorId);
+
 
 }

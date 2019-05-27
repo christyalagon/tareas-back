@@ -29,9 +29,4 @@ public class UsuarioServiceImp implements UsuarioService {
         return usuarioLogueado;
     }
 
-    @Override
-    public List<UsuarioFusion> todosUsuarios() {
-      //  List<UsuariosSeparados> usuariosNormales = usuarioRepository.listarUsuariosCompleto();
-        return usuarioFusionRepository.findAll();
-    }
 }

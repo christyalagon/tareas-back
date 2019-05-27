@@ -6,7 +6,6 @@ import javax.persistence.*;
 
 @SuppressWarnings("serial")
 @Entity
-@NamedStoredProcedureQuery(name = "Usuario.listarUsuariosCompleto", procedureName = "listarUsuariosCompleto")
 public class Usuario implements Serializable {
     @Id
     @Column(name = "id")

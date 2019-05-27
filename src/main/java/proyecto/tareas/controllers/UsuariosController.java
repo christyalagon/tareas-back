@@ -20,9 +20,4 @@ public class UsuariosController {
     @Autowired
     private UsuarioService usuarioService;
 
-    @RequestMapping("/listarTodos")
-    public List<UsuarioFusion> listadoUsuarios() {
-        return usuarioService.todosUsuarios();
-    }
-
 }

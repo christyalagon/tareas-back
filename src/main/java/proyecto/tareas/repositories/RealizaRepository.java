@@ -12,4 +12,5 @@ public interface RealizaRepository extends CrudRepository<Realiza, Long> {
     Realiza findById(Long id);
     Realiza save(Realiza realiza);
     List<Realiza> findByNota(Long nota);
+    List<Realiza> findByNotaNotNullOrderByCodigoAlumnoAscCodigoTarea();
 }

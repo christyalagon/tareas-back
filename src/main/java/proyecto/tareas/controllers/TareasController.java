@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import proyecto.tareas.domain.Alumno;
 import proyecto.tareas.domain.Realiza;
 import proyecto.tareas.domain.Tareas;
+import proyecto.tareas.models.ListadoNotas;
 import proyecto.tareas.models.TareaYAlumno;
 import proyecto.tareas.models.TareaYAlumnoNombre;
 import proyecto.tareas.services.AlumnoService;
@@ -62,6 +63,7 @@ public class TareasController {
     public List<TareaYAlumnoNombre> tareasSinNota(@PathVariable Long tutorId) {
         return tareasService.tareasSinNota(tutorId);
     }
+
     @PostMapping("/puntuar")
     public void tareasPuntuadas(@RequestBody List<TareaYAlumnoNombre> tareasAlumno) {
         for (TareaYAlumnoNombre tareaAlumno : tareasAlumno) {
@@ -75,5 +77,10 @@ public class TareasController {
             System.out.println(realiza.toString());
             realizaService.guardarConNota(realiza);
         }
+    }
+
+    @GetMapping("/listado/notasPorTutorEmpresa/{tutorId}")
+    public List<ListadoNotas> listadoNotasPorTutorId(@PathVariable Long tutorId) {
+        return tareasService.listadoNotasPorTutorId(tutorId);
     }
 }
