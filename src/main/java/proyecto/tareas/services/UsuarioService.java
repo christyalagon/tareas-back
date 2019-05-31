@@ -8,5 +8,14 @@ import java.util.List;
 
 public interface UsuarioService {
     public Usuario findById(Long id);
+
     public Usuario login(String nombre);
+
+    public List<UsuarioFusion> profesores();
+
+    public List<UsuarioFusion> tutoresEmpresa();
+
+    public List<UsuarioFusion> listarTodosFusionados();
+
+    public UsuarioFusion guardarUsuario(UsuarioFusion usuarioFusion);
 }

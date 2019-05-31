@@ -10,5 +10,6 @@ import java.util.List;
 
 public interface UsuarioFusionRepository extends JpaRepository<UsuarioFusion, Long> {
     List<UsuarioFusion> findAll();
+    List<UsuarioFusion> findByPerfil(char perfil);
 
 }

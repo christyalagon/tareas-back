@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @SuppressWarnings("serial")
@@ -11,27 +12,31 @@ import javax.persistence.Id;
 public class Ensena implements Serializable{
 	@Id
 	@Column(name="id")
+	@GeneratedValue
 	private Long id;
-    @Column(name = "codigo_alumno")
-	private String codigoAlumno;
+    @Column(name = "alumno_id")
+	private Long alumnoId;
 	@Column(name = "profesor_id")
-	private String profId;
+	private Long profId;
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getCodigoAlumno() {
-		return codigoAlumno;
+
+	public Long getAlumnoId() {
+		return alumnoId;
 	}
-	public void setCodigoAlumno(String codigoAlumno) {
-		this.codigoAlumno = codigoAlumno;
+
+	public void setAlumnoId(Long alumnoId) {
+		this.alumnoId = alumnoId;
 	}
-	public String getProfId() {
+
+	public Long getProfId() {
 		return profId;
 	}
-	public void setProfId(String profId) {
+	public void setProfId(Long profId) {
 		this.profId = profId;
 	}
 	

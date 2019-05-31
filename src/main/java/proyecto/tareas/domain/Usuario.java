@@ -1,6 +1,7 @@
 package proyecto.tareas.domain;
 
 import java.io.Serializable;
+import java.lang.reflect.Constructor;
 
 import javax.persistence.*;
 
@@ -19,6 +20,17 @@ public class Usuario implements Serializable {
     private String segundoApellido;
     @Column(name = "perfil")
     private char perfil;
+
+    public Usuario(UsuarioFusion usuarioFusion) {
+        this.id = usuarioFusion.getId();
+        this.nombre = usuarioFusion.getNombre();
+        this.primerApellido = usuarioFusion.getPrimerApellido();
+        this.segundoApellido= usuarioFusion.getSegundoApellido();
+        this.perfil = usuarioFusion.getPerfil();
+    }
+
+    public Usuario() {
+    }
 
     public Long getId() {
         return id;

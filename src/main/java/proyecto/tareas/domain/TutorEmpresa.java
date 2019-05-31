@@ -9,27 +9,35 @@ import javax.persistence.Id;
 
 @SuppressWarnings("serial")
 @Entity
-public class TutorEmpresa implements Serializable{
-	@Id
-	@Column(name = "id")
-	private Long id;
-	@Column(name = "empresa")
-	private String empresa;
+public class TutorEmpresa implements Serializable {
+    @Id
+    @Column(name = "id")
+    private Long id;
+    @Column(name = "empresa")
+    private String empresa;
 
-	public Long getId() {
-		return id;
-	}
+    public TutorEmpresa(UsuarioFusion usuarioFusion) {
+        this.id = usuarioFusion.getId();
+        this.empresa = usuarioFusion.getCentroEmpresa();
+    }
+    public TutorEmpresa(){
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    }
 
-	public String getEmpresa() {
-		return empresa;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setEmpresa(String empresa) {
-		this.empresa = empresa;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
+    }
 
 }

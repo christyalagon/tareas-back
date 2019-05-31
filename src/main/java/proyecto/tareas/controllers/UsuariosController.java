@@ -1,14 +1,8 @@
 package proyecto.tareas.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import proyecto.tareas.domain.Alumno;
+import org.springframework.web.bind.annotation.*;
 import proyecto.tareas.domain.UsuarioFusion;
-import proyecto.tareas.models.UsuariosSeparados;
-import proyecto.tareas.services.AlumnoService;
 import proyecto.tareas.services.UsuarioService;
 
 import java.util.List;
@@ -20,4 +14,24 @@ public class UsuariosController {
     @Autowired
     private UsuarioService usuarioService;
 
+
+    @GetMapping("/listar/profesores")
+    public List<UsuarioFusion> listadoProfesores() {
+        return usuarioService.profesores();
+    }
+
+    @GetMapping("/listar/empresa")
+    public List<UsuarioFusion> listadoTutoresEmpresa() {
+        return usuarioService.tutoresEmpresa();
+    }
+
+    @GetMapping("/listar/todos")
+    public List<UsuarioFusion> todos() {
+        return usuarioService.listarTodosFusionados();
+    }
+
+    @PostMapping("/guardar")
+    public UsuarioFusion guardarUsuario(@RequestBody UsuarioFusion usuarioFusion) {
+        return usuarioService.guardarUsuario(usuarioFusion);
+    }
 }
