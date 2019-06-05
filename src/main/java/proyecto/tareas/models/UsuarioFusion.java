@@ -1,4 +1,7 @@
-package proyecto.tareas.domain;
+package proyecto.tareas.models;
+
+import lombok.NoArgsConstructor;
+import proyecto.tareas.domain.Usuario;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -6,6 +9,7 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "Usuario_fusion")
+@NoArgsConstructor
 public class UsuarioFusion implements Serializable {
     @Id
     @Column(name = "id")
@@ -21,6 +25,14 @@ public class UsuarioFusion implements Serializable {
     private char perfil;
     @Column(name = "centro_empresa")
     private String centroEmpresa;
+
+    public UsuarioFusion(Usuario usuario){
+        this.id = usuario.getId();
+        this.nombre = usuario.getNombre();
+        this.primerApellido = usuario.getPrimerApellido();
+        this.segundoApellido = usuario.getSegundoApellido();
+        this.perfil = usuario.getPerfil();
+    }
 
     public Long getId() {
         return id;

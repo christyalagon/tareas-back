@@ -1,8 +1,7 @@
 package proyecto.tareas.services;
 
 import proyecto.tareas.domain.Usuario;
-import proyecto.tareas.domain.UsuarioFusion;
-import proyecto.tareas.models.UsuariosSeparados;
+import proyecto.tareas.models.UsuarioFusion;
 
 import java.util.List;
 

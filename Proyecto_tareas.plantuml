@@ -1,0 +1,720 @@
+@startuml
+
+title __COMPRAS's Class Diagram__\n
+
+  package proyecto.tareas {
+    package proyecto.tareas.domain {
+      class Alumno {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.repositories {
+      interface AlumnoRepository {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      interface AlumnoService {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      package proyecto.tareas.services.imp {
+        class AlumnoServiceImp {
+        }
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.controllers {
+      class AlumnosController {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.domain {
+      class Ciclo {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.repositories {
+      interface CicloRepository {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      interface CicloService {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      package proyecto.tareas.services.imp {
+        class CicloServiceImp {
+        }
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.domain {
+      class CriteriosEvaluacion {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      interface CriteriosEvaluacionService {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      package proyecto.tareas.services.imp {
+        class CriteriosEvaluacionServiceImp {
+        }
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.repositories {
+      interface CriteriosRepository {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.domain {
+      class Ensena {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.repositories {
+      interface EnsenaRepository {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      interface EnsenaService {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      package proyecto.tareas.services.imp {
+        class EnsenaServiceImp {
+        }
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.domain {
+      class EstaCompuesto {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.repositories {
+      interface EstaCompuestoRepository {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      interface EstaCompuestoService {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      package proyecto.tareas.services.imp {
+        class EstaCompuestoServiceImp {
+        }
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.models {
+      class ListadoNotas {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.controllers {
+      class LoginController {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      interface ModuloService {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      package proyecto.tareas.services.imp {
+        class ModuloServiceImp {
+        }
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.domain {
+      class Modulos {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.repositories {
+      interface ModulosRepository {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.models {
+      class NuevoAlumno {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.domain {
+      class Participa {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.repositories {
+      interface ParticipaRespository {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      interface ParticipaService {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      package proyecto.tareas.services.imp {
+        class ParticipaServiceImp {
+        }
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.domain {
+      class Profesor {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.repositories {
+      interface ProfesorRepository {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      interface ProfesorService {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      package proyecto.tareas.services.imp {
+        class ProfesorServiceImp {
+        }
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.domain {
+      class Proyecto {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.repositories {
+      interface ProyectoRepository {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      interface ProyectoService {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      package proyecto.tareas.services.imp {
+        class ProyectoServiceImp {
+        }
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.domain {
+      class Puntua {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.repositories {
+      interface PuntuaRepository {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      interface PuntuaService {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      package proyecto.tareas.services.imp {
+        class PuntuaServiceImp {
+        }
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.domain {
+      class Realiza {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.repositories {
+      interface RealizaRepository {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      interface RealizaService {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      package proyecto.tareas.services.imp {
+        class RealizaServiceImp {
+        }
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.repositories {
+      interface ResultadosAprRepository {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.domain {
+      class ResultadosAprendizaje {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      interface ResultadosAprendizajeService {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      package proyecto.tareas.services.imp {
+        class ResultadosAprendizajeServiceImp {
+        }
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.models {
+      class TareaYAlumno {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.models {
+      class TareaYAlumnoNombre {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.domain {
+      class Tareas {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    class TareasApplication {
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.controllers {
+      class TareasController {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.repositories {
+      interface TareasRepository {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      interface TareasService {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      package proyecto.tareas.services.imp {
+        class TareasServiceImp {
+        }
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.controllers {
+      class TestController {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.domain {
+      class Tiene {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.repositories {
+      interface TieneRepository {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      interface TieneService {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      package proyecto.tareas.services.imp {
+        class TieneServiceImp {
+        }
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      interface TutorEmpService {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      package proyecto.tareas.services.imp {
+        class TutorEmpServiceImp {
+        }
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.domain {
+      class TutorEmpresa {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.repositories {
+      interface TutorEmpresaRepository {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.domain {
+      class Usuario {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.models {
+      class UsuarioFusion {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.repositories {
+      interface UsuarioFusionRepository {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.repositories {
+      interface UsuarioRepository {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      interface UsuarioService {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.services {
+      package proyecto.tareas.services.imp {
+        class UsuarioServiceImp {
+        }
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.controllers {
+      class UsuariosController {
+      }
+    }
+  }
+  
+
+  package proyecto.tareas {
+    package proyecto.tareas.models {
+      class UsuariosSeparados {
+      }
+    }
+  }
+  
+
+  Alumno -up-|> Serializable
+  AlumnoServiceImp -up-|> AlumnoService
+  AlumnoServiceImp o-- AlumnoRepository : alumnoRepository
+  AlumnoServiceImp o-- EnsenaRepository : ensenaRepository
+  AlumnosController o-- AlumnoService : alumnoService
+  Ciclo -up-|> Serializable
+  CicloServiceImp -up-|> CicloService
+  CicloServiceImp o-- CicloRepository : cicloRepository
+  CriteriosEvaluacion -up-|> Serializable
+  CriteriosEvaluacionServiceImp -up-|> CriteriosEvaluacionService
+  CriteriosEvaluacionServiceImp o-- CriteriosRepository : criteriosRepository
+  Ensena -up-|> Serializable
+  EnsenaServiceImp -up-|> EnsenaService
+  EnsenaServiceImp o-- EnsenaRepository : ensenaRepository
+  EstaCompuesto -up-|> Serializable
+  EstaCompuestoServiceImp -up-|> EstaCompuestoService
+  EstaCompuestoServiceImp o-- EstaCompuestoRepository : estaCompuestoRepository
+  LoginController o-- UsuarioService : usuarioService
+  ModuloServiceImp -up-|> ModuloService
+  ModuloServiceImp o-- ModulosRepository : modulosRepository
+  Modulos -up-|> Serializable
+  Participa -up-|> Serializable
+  ParticipaServiceImp -up-|> ParticipaService
+  ParticipaServiceImp o-- ParticipaRespository : participaRespository
+  Profesor -up-|> Serializable
+  ProfesorServiceImp -up-|> ProfesorService
+  ProfesorServiceImp o-- ProfesorRepository : profesorRepository
+  Proyecto -up-|> Serializable
+  ProyectoServiceImp -up-|> ProyectoService
+  ProyectoServiceImp o-- ProyectoRepository : proyectoRepository
+  Puntua -up-|> Serializable
+  PuntuaServiceImp -up-|> PuntuaService
+  PuntuaServiceImp o-- PuntuaRepository : puntuaRepository
+  Realiza -up-|> Serializable
+  RealizaServiceImp -up-|> RealizaService
+  RealizaServiceImp o-- RealizaRepository : realizaRepository
+  ResultadosAprendizaje -up-|> Serializable
+  ResultadosAprendizajeServiceImp -up-|> ResultadosAprendizajeService
+  ResultadosAprendizajeServiceImp o-- ResultadosAprRepository : resultadosAprRepository
+  Tareas -up-|> Serializable
+  TareasController o-- TareasService : tareasService
+  TareasController o-- RealizaService : realizaService
+  TareasServiceImp -up-|> TareasService
+  TareasServiceImp o-- TareasRepository : tareasRepository
+  TareasServiceImp o-- RealizaRepository : realizaRepository
+  TareasServiceImp o-- AlumnoRepository : alumnoRepository
+  TestController o-- AlumnoService : alumnoService
+  Tiene -up-|> Serializable
+  TieneServiceImp -up-|> TieneService
+  TieneServiceImp o-- TieneRepository : tieneRepository
+  TutorEmpServiceImp -up-|> TutorEmpService
+  TutorEmpServiceImp o-- TutorEmpresaRepository : tutorEmpresaRepository
+  TutorEmpresa -up-|> Serializable
+  Usuario -up-|> Serializable
+  UsuarioFusion -up-|> Serializable
+  UsuarioServiceImp -up-|> UsuarioService
+  UsuarioServiceImp o-- UsuarioRepository : usuarioRepository
+  UsuarioServiceImp o-- TutorEmpresaRepository : tutorEmpresaRepository
+  UsuarioServiceImp o-- ProfesorRepository : profesorRepository
+  UsuariosController o-- UsuarioService : usuarioService
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

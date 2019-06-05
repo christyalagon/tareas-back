@@ -2,7 +2,7 @@ package proyecto.tareas.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import proyecto.tareas.domain.UsuarioFusion;
+import proyecto.tareas.models.UsuarioFusion;
 import proyecto.tareas.services.UsuarioService;
 
 import java.util.List;

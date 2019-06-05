@@ -20,7 +20,7 @@ public class AlumnosController {
 
     @RequestMapping("/alumnos/tutor/{tutorId}")
     public List<Alumno> listadoAlumnos(@PathVariable String tutorId) {
-        return alumnoService.findByTutorId(1l);
+        return alumnoService.findByTutorId(Long.valueOf(tutorId));
     }
 
     @PostMapping("/alumnos/nuevo")

@@ -1,5 +1,7 @@
 package proyecto.tareas.domain;
 
+import proyecto.tareas.models.UsuarioFusion;
+
 import java.io.Serializable;
 
 

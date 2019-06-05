@@ -34,6 +34,7 @@ public class AlumnoServiceImp implements AlumnoService {
         Alumno alumno = new Alumno();
         Ensena ensena = new Ensena();
 
+        System.out.println(nuevoAlumno.toString());
         alumno.setNombre(nuevoAlumno.getNombre());
         alumno.setCodigoAlumno(nuevoAlumno.getCodigoAlumno());
         alumno.setPrimerApellido(nuevoAlumno.getPrimerApellido());

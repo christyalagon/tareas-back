@@ -6,21 +6,19 @@ import org.springframework.stereotype.Service;
 import proyecto.tareas.domain.Profesor;
 import proyecto.tareas.domain.TutorEmpresa;
 import proyecto.tareas.domain.Usuario;
-import proyecto.tareas.domain.UsuarioFusion;
+import proyecto.tareas.models.UsuarioFusion;
 import proyecto.tareas.repositories.ProfesorRepository;
 import proyecto.tareas.repositories.TutorEmpresaRepository;
-import proyecto.tareas.repositories.UsuarioFusionRepository;
 import proyecto.tareas.repositories.UsuarioRepository;
 import proyecto.tareas.services.UsuarioService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service("usuarioServiceImp")
 public class UsuarioServiceImp implements UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
-    @Autowired
-    private UsuarioFusionRepository usuarioFusionRepository;
     @Autowired
     private TutorEmpresaRepository tutorEmpresaRepository;
     @Autowired
@@ -45,17 +43,44 @@ public class UsuarioServiceImp implements UsuarioService {
 
     @Override
     public List<UsuarioFusion> profesores() {
-        return usuarioFusionRepository.findByPerfil(profesorPerfil);
+        List<Usuario> usuarios = usuarioRepository.findByPerfil(profesorPerfil);
+        List<UsuarioFusion> usuarioFusions = new ArrayList<>();
+        for (Usuario usuario : usuarios) {
+            UsuarioFusion usuarioFusion = new UsuarioFusion(usuario);
+            usuarioFusion.setCentroEmpresa(profesorRepository.findById(usuario.getId()).getCentroEducativo());
+            usuarioFusions.add(usuarioFusion);
+        }
+        return usuarioFusions;
     }
 
     @Override
     public List<UsuarioFusion> tutoresEmpresa() {
-        return usuarioFusionRepository.findByPerfil(empresaPerfil);
+        List<Usuario> usuarios = usuarioRepository.findByPerfil(empresaPerfil);
+        List<UsuarioFusion> usuarioFusions = new ArrayList<>();
+        for (Usuario usuario : usuarios) {
+            UsuarioFusion usuarioFusion = new UsuarioFusion(usuario);
+            usuarioFusion.setCentroEmpresa(tutorEmpresaRepository.findById(usuario.getId()).getEmpresa());
+            usuarioFusions.add(usuarioFusion);
+        }
+        return usuarioFusions;
     }
 
     @Override
     public List<UsuarioFusion> listarTodosFusionados() {
-        return usuarioFusionRepository.findAll();
+        List<Usuario> usuarios = usuarioRepository.findAll();
+        List<UsuarioFusion> usuarioFusions = new ArrayList<>();
+        for (Usuario usuario : usuarios) {
+            UsuarioFusion usuarioFusion = new UsuarioFusion(usuario);
+            if (usuario.getPerfil() == profesorPerfil) {
+                usuarioFusion.setCentroEmpresa(profesorRepository.findById(usuario.getId()).getCentroEducativo());
+            } else {
+                usuarioFusion.setCentroEmpresa(tutorEmpresaRepository.findById(usuario.getId()).getEmpresa());
+
+            }
+            ;
+            usuarioFusions.add(usuarioFusion);
+        }
+        return usuarioFusions;
     }
 
     @Override

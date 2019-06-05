@@ -48,9 +48,9 @@ public class TareasServiceImp implements TareasService {
         List<Realiza> listadoRealiza = realizaRepository.findByNota(null);
         List<TareaYAlumnoNombre> tareaYAlumnos = new ArrayList<>();
         for (Realiza realiza : listadoRealiza) {
-            if (alumnoRepository.findByTutorIdAndCodigoAlumno(tutorId, realiza.getCodigoAlumno()) != null) {
+            Alumno alumno = alumnoRepository.findByTutorIdAndCodigoAlumno(tutorId, realiza.getCodigoAlumno());
+            if (alumno != null) {
                 TareaYAlumnoNombre tareaYAlumno = new TareaYAlumnoNombre();
-                Alumno alumno = alumnoRepository.findByCodigoAlumno(realiza.getCodigoAlumno());
                 Tareas tarea = tareasRepository.findByCodigoTarea(realiza.getCodigoTarea());
                 tareaYAlumno.setIdRealiza(realiza.getId());
                 tareaYAlumno.setDescripcion(tarea.getDescripcion());
