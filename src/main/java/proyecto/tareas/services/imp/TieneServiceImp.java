@@ -15,4 +15,9 @@ public class TieneServiceImp implements TieneService {
     public Tiene findById(Long id) {
         return tieneRepository.findById(id);
     }
+
+    @Override
+    public Tiene guardar(Tiene tiene) {
+        return tieneRepository.save(tiene);
+    }
 }

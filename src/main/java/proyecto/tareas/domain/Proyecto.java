@@ -2,10 +2,7 @@ package proyecto.tareas.domain;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @SuppressWarnings("serial")
 @Entity
@@ -15,12 +12,12 @@ public class Proyecto implements Serializable {
 	@Column(name = "id")
 	@GeneratedValue
 	private Long id;
-	@Column(name = "nombre")
+	@Column(name = "nombre", unique = true)
 	private String nombre;
 	@Column(name = "descripcion")
 	private String descripcion;
 	@Column(name = "tutor_id")
-	private String tutorId;
+	private Long tutorId;
 
 	public Long getId() {
 		return id;
@@ -42,10 +39,10 @@ public class Proyecto implements Serializable {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	public String getTutorId() {
+	public Long getTutorId() {
 		return tutorId;
 	}
-	public void setTutorId(String tutorId) {
+	public void setTutorId(Long tutorId) {
 		this.tutorId = tutorId;
 	}
 }

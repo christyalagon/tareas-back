@@ -1,5 +1,8 @@
 package proyecto.tareas.domain;
 
+import lombok.NoArgsConstructor;
+import proyecto.tareas.models.TareaYAlumno;
+
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -9,6 +12,7 @@ import javax.persistence.Id;
 
 @SuppressWarnings("serial")
 @Entity
+@NoArgsConstructor
 public class Tiene implements Serializable {
 	@Id
 	@Column(name = "id")
@@ -19,6 +23,10 @@ public class Tiene implements Serializable {
 	@Column(name = "codigo_tarea")
 	private String codigoTarea;
 
+	public Tiene(String codigo, String nombre){
+		this.codigoTarea = codigo;
+		this.nombreProyecto = nombre;
+	}
 	public Long getId() {
 		return id;
 	}

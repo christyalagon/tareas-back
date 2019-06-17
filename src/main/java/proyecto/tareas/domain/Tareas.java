@@ -1,5 +1,9 @@
 package proyecto.tareas.domain;
 
+import lombok.ToString;
+import proyecto.tareas.models.TareaYAlumno;
+import proyecto.tareas.models.TareaYProyecto;
+
 import java.io.Serializable;
 
 import javax.persistence.*;
@@ -7,6 +11,7 @@ import javax.validation.constraints.NotNull;
 
 @SuppressWarnings("serial")
 @Entity
+@ToString
 public class Tareas implements Serializable {
     @Id
     @GeneratedValue
@@ -16,6 +21,14 @@ public class Tareas implements Serializable {
     private String codigoTarea;
     @Column(name = "descripcion")
     private String descripcion;
+    public Tareas(){
+
+    }
+    public Tareas(TareaYAlumno tareaYAlumno){
+        this.id = tareaYAlumno.getIdTarea();
+        this.codigoTarea = tareaYAlumno.getCodigoTarea();
+        this.descripcion= tareaYAlumno.getDescripcion();
+    }
 
     public Long getId() {
         return id;
